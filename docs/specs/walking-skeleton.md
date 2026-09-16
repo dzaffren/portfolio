@@ -5,6 +5,7 @@
 **Shape doc:** docs/specs/portfolio-website/shape.md
 **Depends on:** None
 **Page:** _(added at the end of pause 3)_
+**Pause 1:** approved by owner 2026-09-16. Pause 2 waits on `/design system`.
 
 One deployed page at a real URL: a placeholder avatar on flat ground that
 walks with keys on desktop and a joystick on a phone, under a plain HTML
