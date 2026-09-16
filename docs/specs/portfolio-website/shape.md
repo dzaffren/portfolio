@@ -12,8 +12,9 @@ a controllable avatar exploring a 3D third-person world.
 
 ## Problem
 
-A freelance client sizing up Dzafran today has only GitHub and LinkedIn to go
-on: a list of repos with no story, no visuals, and no clear way to hire. Nothing
+A freelance client or a recruiter sizing up Dzafran today has only GitHub and
+LinkedIn to go on: a list of repos with no story, no visuals, and no clear way
+to hire. Nothing
 online shows that Dzafran can build a polished, moving interface, which is the
 kind of work the site should win.
 
@@ -55,7 +56,7 @@ kind: a side project usually has one, a freelance project usually does not.
 ## Today
 
 ```
-  freelance client                     what they see
+  client or recruiter                  what they see
   ───────────────                      ────────────
   "can this person build it?"
         │
@@ -167,8 +168,8 @@ Rules every slice carries, not slices of their own:
 | O5 | Writing the CV content (work, education, certifications, project blurbs, screenshots) is the owner's work and will take longer than the code. Slices 1 to 3 wait on it. | flag | shape | user | Open | — |
 | O6 | Any reference sites or games for the look, the avatar style and the kind of motion wanted? Feeds `/design system`. | question | shape | user | Open | — |
 | O7 | Where do the avatar and world models come from: a free asset pack, a bought pack, or made by the owner? Decides art style and licence, and how much modelling work is in each zone. | question | shape | user | Open | — |
-| O8 | A 3D free-movement world with touch controls is much more work than the earlier motion-only plan. I do not have a number; the slice-0 spec and the O4 spike will give one. The owner should weigh this against the learning goal before `/spec`. | flag | shape | user | Open | — |
+| O8 | A 3D free-movement world with touch controls is much more work than the earlier motion-only plan. I do not have a number; the slice-0 spec and the O4 spike will give one. The owner should weigh this against the learning goal before `/spec`. | flag | shape | user | Accepted risk | Owner weighed it and chose to proceed (2026-09-16). The slice-0 spec gives the first real estimate. |
 | O9 | Assuming every content panel is real HTML and the overlay is the accessibility path, so no separate "plain CV page" is built. | assumption | shape | user | Open | — |
 | O10 | Assuming side, freelance and hackathon projects share one plaza and one card shape with a kind tag and a filter, rather than three zones. Three zones means three places to model and a longer walk for a client. | assumption | shape | user | Open | — |
-| O11 | Rough counts per section: how many side, freelance and hackathon projects, work entries and certifications exist today? Decides whether the plaza needs a filter at all and how big each zone is. | question | shape | user | Open | Partial (2026-09-16): more than six projects worth showing, each with code or a live demo. Counts per kind, work entries and certifications still needed. |
-| O12 | Who is the reader? Earlier shaping named a freelance client. Answers on 2026-09-16 said job hunting, recruiters and hiring managers weighted equally, general software engineer roles, and the trigger was wanting a proper home for the work. Both can be true, but the problem statement and what the projects zone leads with change with the answer. | question | shape | user | Open | — |
+| O11 | Rough counts per section: how many side, freelance and hackathon projects, work entries and certifications exist today? Decides whether the plaza needs a filter at all and how big each zone is. | question | shape | user | Open | Partial (2026-09-16): more than six projects worth showing, each with code or a live demo. Counts per kind, work entries and certifications still needed. Owner will supply them later; not needed before slice 0. |
+| O12 | Who is the reader? Earlier shaping named a freelance client. Answers on 2026-09-16 said job hunting, recruiters and hiring managers weighted equally, general software engineer roles, and the trigger was wanting a proper home for the work. Both can be true, but the problem statement and what the projects zone leads with change with the answer. | question | shape | user | Resolved | Both (owner, 2026-09-16). The problem statement now names both. One set of cards serves both readers: freelance entries carry client or sector, side and hackathon entries carry the GitHub link. |
