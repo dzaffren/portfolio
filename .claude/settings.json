@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "dzafran-claude-plugins": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/dzaffren/claude-plugin.git"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "zuko@dzafran-claude-plugins": true
+  }
+}
