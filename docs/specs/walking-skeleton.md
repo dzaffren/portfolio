@@ -168,11 +168,11 @@ here with their state; new rows start at O14.
 | O3 | No backend, static site | assumption | shape | user | Resolved | Confirmed. Nothing runs at request time. |
 | O4 | 3D world runs on a phone | unproven | shape | poc | Resolved | Pass on an iPhone (iOS 18.4): 55 to 60 fps, 130 KB gzipped, first 3D frame at 2.2 s. |
 | O7 | Where models come from | question | shape | design | Open | Deferred to `/design system`. Slice 0 uses placeholder shapes. Owner asked about Blender: a fit for owner-made models, glTF export loads natively in three.js, but it is a second learning curve and model size counts against the 300 KB budget. Style first, then pack-or-model. |
-| O9 | Overlay and panels are the accessibility path, no separate plain CV page | assumption | shape | user | Open | Slice 0 builds on it: the overlay alone is the fallback for every device that cannot run the 3D. |
+| O9 | Overlay and panels are the accessibility path, no separate plain CV page | assumption | shape | user | Resolved | Confirmed by owner 2026-09-16. The overlay alone is the fallback for every device that cannot run the 3D. |
 | O13 | Mid-range Android unmeasured | flag | shape | user | Accepted risk | Owner's condition is met by scenarios 4 and 5: a device that cannot start or cannot sustain 20 fps gets the overlay and a note. |
 | O14 | Exact overlay text: the name as it should appear, and the one-line pitch. | question | spec p1 | user | Open | Needed before `/build`. Acceptance criteria use "Dzafran" as the name for now. |
-| O15 | Which email address goes public on the site as the mailto link. | question | spec p1 | user | Open | Needed before `/build`. |
-| O16 | The exact LinkedIn profile URL. | question | spec p1 | user | Open | Needed before `/build`. GitHub is github.com/dzaffren. |
-| O17 | Deploying to Cloudflare Pages from GitHub Actions needs a Cloudflare account, a Pages project, and an API token stored as a GitHub Actions secret. Owner creates these; CI cannot. | flag | spec p1 | user | Open | Needed before the deploy step of `/build` can go green. Everything else in the slice can be built and tested without it. |
+| O15 | Which email address goes public on the site as the mailto link. | question | spec p1 | user | Resolved | ahmaddzafranmohamadbustaman@gmail.com (owner, 2026-09-16). |
+| O16 | The exact LinkedIn profile URL. | question | spec p1 | user | Resolved | linkedin.com/in/ahmaddzafranmohamadbustaman (owner, 2026-09-16). GitHub is github.com/dzaffren. |
+| O17 | Deploying to Cloudflare Pages from GitHub Actions needs a Cloudflare account, a Pages project, and an API token stored as a GitHub Actions secret. Owner creates these; CI cannot. | flag | spec p1 | user | Resolved | Owner agreed 2026-09-16 to set these up before the deploy step. Pause 3 lists the exact secret names. Everything else in the slice builds and tests without them. |
 
 _Never delete this section or its rows. See references/ledger.md._
