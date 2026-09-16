@@ -27,12 +27,30 @@ point. The site is the excuse.
 | The world | 3D, third-person, free movement | The most expensive of the three options offered. Every zone is a place to model, light and test. |
 | On a phone | The game, with touch controls | An on-screen joystick and a phone-safe scene. This is the biggest technical risk (O4). |
 | In a hurry | Always a shortcut | A menu or map jumps to any section. The walk is optional. This is what keeps a busy client from leaving. |
-| Content | Whole CV: education, work, projects, certifications, plus contact | The owner writes all of it. Content, not code, is the long pole (O5). |
+| Content | Whole CV: education, work experience, certifications, plus three kinds of project (side, freelance, hackathon) and contact | The owner writes all of it. Content, not code, is the long pole (O5). |
 
 Plain statement: this is two ideas fused. One is a CV site. The other is a
 small 3D game. The game is the wrapper and the reason to build; the CV is what
 a client actually needs. The slices below keep the CV readable without the
 game at every step, so the site is useful even when the game is half done.
+
+## What is on the site
+
+| Section | Each entry holds | Where in the world | Slice |
+|---|---|---|---|
+| About and contact | Name, one-line pitch, email link, social links | Overlay, always visible | 0 |
+| Projects: side | Title, blurb, tech list, one image, GitHub link, live-demo link if any | Projects plaza | 1 |
+| Projects: freelance | Same fields, plus client or sector and what was delivered. GitHub link often absent (client code) | Projects plaza | 1 |
+| Projects: hackathon | Same fields, plus event name, date, team size, result (placed, finalist, built) | Projects plaza | 1 |
+| Work experience | Role, company, dates, three to five lines of what was done | Work building | 2 |
+| Education | Institution, qualification, dates, one line | Education hall | 2 |
+| Certifications | Name, issuer, date, link to the credential | Certs shelf | 2 |
+| Project story | Problem, what was built, result, screenshots. For the projects worth a deeper read | Opens from a card | 3 |
+| GitHub facts | Stars, main language, last push. Only for entries with a GitHub link | On the card | 4 |
+
+The three project kinds are one section with a kind tag and a filter, not
+three zones (O10). A GitHub repo is a field on a project, not a separate
+kind: a side project usually has one, a freelance project usually does not.
 
 ## Today
 
@@ -104,7 +122,7 @@ independent.
 | # | Slice | What ships | Why this order |
 |---|-------|-----------|----------------|
 | 0 | Walking skeleton | One deployed page at a real URL. A 3D avatar stands on a flat ground and walks with keys on desktop and an on-screen joystick on a phone. A plain HTML overlay shows name, one-line pitch, email link and social links. Reduced-motion or a device that fails to start the 3D gets the overlay alone. One browser e2e test walks it. CI runs the test and a page-weight check on every push. | Proves every rail at once: 3D rendering, character control, touch input, the no-3D fallback, deploy, CI. Everything risky in this plan lives here, on purpose. A client landing here still knows who Dzafran is and how to make contact. |
-| 1 | Projects zone | A client walks to the projects plaza, or picks Projects from the overlay, and reads 3 to 6 hand-written project cards: title, blurb, tech list, one image, GitHub and live-demo links. | Projects are the proof a freelance client wants. Independent of slice 2, so it can go first. |
+| 1 | Projects zone | A client walks to the projects plaza, or picks Projects from the overlay, and reads hand-written project cards tagged side, freelance or hackathon: title, blurb, tech list, one image, links, and the kind-specific lines above. A filter narrows to one kind. | Projects are the proof a freelance client wants. Independent of slice 2, so it can go first. |
 | 2 | CV zone | A client walks to the work, education and certifications spots, or picks them from the overlay, and reads each as a timeline or list. Hand-written content in the repo. | The rest of the CV. Same panel mechanism as slice 1, different content. Could ship before 1 if the project content is late (O5). |
 | 3 | Project story | A client opens a project card and reads the case: the problem, what was built, the result, with screenshots. | Clients buy outcomes, not repos. Needs the cards from slice 1. |
 | 4 | GitHub facts | Each project card also shows stars, main language and last push, read from the GitHub API at build time. A failed fetch keeps the last good values. | Lowest value for a client, so last. Build-time keeps tokens out of the browser and avoids rate limits. |
@@ -142,7 +160,7 @@ Rules every slice carries, not slices of their own:
 
 | ID | What | Type | Raised at | Owner | Status | Answer |
 | -- | ---- | ---- | --------- | ----- | ------ | ------ |
-| O1 | Which 3 to 6 projects go in, and which have screenshots or a live demo? | question | shape | user | Open | — |
+| O1 | Which projects go in, and which have screenshots or a live demo? | question | shape | user | Open | — |
 | O2 | Is there a domain name already, or does slice 0 ship on a host subdomain first? | question | shape | user | Open | — |
 | O3 | Assuming a static site with no backend: email link, hand-written content, GitHub read at build time. | assumption | shape | user | Open | — |
 | O4 | A 3D third-person world with a controllable avatar loads and runs acceptably on a mid-range phone with touch controls, without hurting first paint. If it does not, the choices are: simpler world on phone, or the 2D or on-rails options above. | unproven | shape | poc | Open | — |
@@ -151,3 +169,5 @@ Rules every slice carries, not slices of their own:
 | O7 | Where do the avatar and world models come from: a free asset pack, a bought pack, or made by the owner? Decides art style and licence, and how much modelling work is in each zone. | question | shape | user | Open | — |
 | O8 | A 3D free-movement world with touch controls is much more work than the earlier motion-only plan. I do not have a number; the slice-0 spec and the O4 spike will give one. The owner should weigh this against the learning goal before `/spec`. | flag | shape | user | Open | — |
 | O9 | Assuming every content panel is real HTML and the overlay is the accessibility path, so no separate "plain CV page" is built. | assumption | shape | user | Open | — |
+| O10 | Assuming side, freelance and hackathon projects share one plaza and one card shape with a kind tag and a filter, rather than three zones. Three zones means three places to model and a longer walk for a client. | assumption | shape | user | Open | — |
+| O11 | Rough counts per section: how many side, freelance and hackathon projects, work entries and certifications exist today? Decides whether the plaza needs a filter at all and how big each zone is. | question | shape | user | Open | — |
