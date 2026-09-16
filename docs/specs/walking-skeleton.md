@@ -100,7 +100,7 @@ its world position changed by at least 0.5 units.
 Scenario: Desktop visitor walks the avatar
   Given a visitor opens the site at 1280x800 with a keyboard on 2026-09-20
   When the page loads
-  Then the overlay with "Dzafran", the one-line pitch, and the GitHub, LinkedIn and Email links is visible before any 3D frame is drawn
+  Then the overlay with "Dzafran", the pitch "AI full-stack engineer. I ship AI products end to end.", and the GitHub, LinkedIn and Email links is visible before any 3D frame is drawn
   And within 3 seconds the world is drawn: flat ground, a placeholder avatar, the camera behind and above it
   When the visitor holds W for 1 second
   Then the avatar has moved at least 0.5 units forward and the camera has followed
@@ -139,7 +139,7 @@ Scenario: 3D starts but runs badly
 
 **In:**
 
-- The overlay: name, one-line pitch, GitHub, LinkedIn and Email links. Plain HTML and CSS, paints before any script. Always on top of the world.
+- The overlay: "Dzafran", the pitch "AI full-stack engineer. I ship AI products end to end.", and links to github.com/dzaffren, linkedin.com/in/ahmaddzafranmohamadbustaman and mailto:ahmaddzafranmohamadbustaman@gmail.com. Plain HTML and CSS, paints before any script. Always on top of the world.
 - The world: flat finite ground, a placeholder avatar (capsule and sphere as in the O4 spike), a camera that follows behind. The avatar stops at the ground edge.
 - Controls: WASD and arrow keys on desktop, an on-screen joystick on touch devices.
 - The three fallbacks above: reduced-motion opt-in, cannot-start note, runs-badly drop.
@@ -170,7 +170,7 @@ here with their state; new rows start at O14.
 | O7 | Where models come from | question | shape | design | Open | Deferred to `/design system`. Slice 0 uses placeholder shapes. Owner asked about Blender: a fit for owner-made models, glTF export loads natively in three.js, but it is a second learning curve and model size counts against the 300 KB budget. Style first, then pack-or-model. |
 | O9 | Overlay and panels are the accessibility path, no separate plain CV page | assumption | shape | user | Resolved | Confirmed by owner 2026-09-16. The overlay alone is the fallback for every device that cannot run the 3D. |
 | O13 | Mid-range Android unmeasured | flag | shape | user | Accepted risk | Owner's condition is met by scenarios 4 and 5: a device that cannot start or cannot sustain 20 fps gets the overlay and a note. |
-| O14 | Exact overlay text: the name as it should appear, and the one-line pitch. | question | spec p1 | user | Open | Name: "Dzafran" (owner, 2026-09-16). Pitch: owner wants it framed as an AI engineer, wording still to pick. Note for slice 1: the projects zone should then lead with AI work, since the shape doc's problem statement leads with interface work. |
+| O14 | Exact overlay text: the name as it should appear, and the one-line pitch. | question | spec p1 | user | Resolved | Name: "Dzafran". Pitch: "AI full-stack engineer. I ship AI products end to end." (owner, 2026-09-16). Note for slice 1: the projects zone should lead with AI work, since the shape doc's problem statement leads with interface work. |
 | O15 | Which email address goes public on the site as the mailto link. | question | spec p1 | user | Resolved | ahmaddzafranmohamadbustaman@gmail.com (owner, 2026-09-16). |
 | O16 | The exact LinkedIn profile URL. | question | spec p1 | user | Resolved | linkedin.com/in/ahmaddzafranmohamadbustaman (owner, 2026-09-16). GitHub is github.com/dzaffren. |
 | O17 | Deploying to Cloudflare Pages from GitHub Actions needs a Cloudflare account, a Pages project, and an API token stored as a GitHub Actions secret. Owner creates these; CI cannot. | flag | spec p1 | user | Resolved | Owner agreed 2026-09-16 to set these up before the deploy step. Pause 3 lists the exact secret names. Everything else in the slice builds and tests without them. |
